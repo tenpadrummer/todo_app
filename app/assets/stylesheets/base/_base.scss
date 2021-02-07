@@ -5,6 +5,12 @@ body{
   outline: none;
 }
 
+footer {
+  padding-top: 3rem;
+  position: absolute;
+  bottom: 0;
+}
+
 a {
   @include link-decorate;
 }
