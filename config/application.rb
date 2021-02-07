@@ -15,7 +15,6 @@ module TodoApp
       g.stylesheets false
       g.javascripts false
       g.test_framework false
-
     end
   end
 end
