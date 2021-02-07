@@ -1,0 +1,14 @@
+// styling　common pages
+
+body{
+  font-family: 'Noto Sans Japanese', sans-serif;
+  outline: none;
+}
+
+a {
+  @include link-decorate;
+}
+
+a:hover {
+  @include link-decorate;
+}
