@@ -14,6 +14,46 @@ You also get notifications to your slack channel that you take part in.
   * Markup: HTML5 / CSS3
   * Frontend: Javascript
   * Test: RSpec, FactoryBot, Capybara, selenium-webdriver, chromedriver-helper
-  * Others: slack-notifier(Gem), active_hash(Gem)
+  * Others: slack-notifier(Gem), bcrypt(Gem), acts-as-taggable-on(Gem)
 
 ## Database Design
+
+### users table
+
+| Column             | Type                | Options                    |
+|--------------------|---------------------|----------------------------|
+| name               | string              | null: false, unique: true  |
+| email              | string              | null: false, unique: true  |
+| password_digest    | string              | null: false                |
+
+#### Association
+
+- has_many :tasks, dependent: :destroy
+
+### tasks table
+
+| Column             | Type                | Options                    |
+|--------------------|---------------------|----------------------------|
+| name               | string              | null: false                |
+| content            | string              | null: false                |
+| deadline           | datetime            | null: false                |
+| finished           | boolean             | null: false                |
+| user_id            | integer             | foreign_key: true          |
+| task_id            | integer             | foreign_key: true          |
+
+
+#### Association
+
+- belongs_to :user
+- belongs_to :project
+
+### projects table
+
+| Column             | Type                | Options                         |
+|--------------------|---------------------|---------------------------------|
+| name               | string              | null: false, unique: true       |
+
+#### Association
+
+- has_many :tasks
+
