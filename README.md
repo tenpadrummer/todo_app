@@ -14,7 +14,6 @@ You also get notifications to your slack channel that you take part in.
   * Markup: HTML5 / CSS3
   * Frontend: Javascript
   * Test: RSpec, FactoryBot, Capybara
-<<<<<<< HEAD
   * Others: slack-notifier(Gem), bcrypt(Gem), acts-as-taggable-on(Gem)
 
 ## Database Design
@@ -57,7 +56,4 @@ You also get notifications to your slack channel that you take part in.
 #### Association
 
 - has_many :tasks
-=======
-  * Others: slack-notifier(Gem), active_hash(Gem)
->>>>>>> 4cc9564... setting config and edit Gemfile
 
