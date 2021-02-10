@@ -13,7 +13,7 @@ You also get notifications to your slack channel that you take part in.
   * MySQL: 5.6.51
   * Markup: HTML5 / CSS3
   * Frontend: Javascript
-  * Test: RSpec, FactoryBot, Capybara, selenium-webdriver, chromedriver-helper
+  * Test: RSpec, FactoryBot, Capybara
   * Others: slack-notifier(Gem), bcrypt(Gem), acts-as-taggable-on(Gem)
 
 ## Database Design
