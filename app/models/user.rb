@@ -9,5 +9,5 @@ class User < ApplicationRecord
     e.validates :email, format: { with: EMAIL_REGEX }
   end
 
-  validates :password,  presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
+  validates :password,  presence: true, format: { with: PASSWORD_REGEX }
 end
