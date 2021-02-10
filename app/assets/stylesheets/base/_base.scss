@@ -13,8 +13,7 @@ footer {
 
 a {
   @include link-decorate;
-}
-
-a:hover {
-  @include link-decorate;
+  &:hover {
+    @include link-decorate;
+  }
 }

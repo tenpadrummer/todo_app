@@ -5,13 +5,12 @@
 
 .site-header {
   position: relative;
-  background-color: #def7ff;
-}
-
-.site-header__wrapper {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0 1.5rem;
+  background-color: $color_skyblue;
+  &__wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 1.5rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -37,7 +36,7 @@
     right: 0;
     left: 0;
     z-index: -1;
-    background-color: #def7ff;
+    background-color: $color_skyblue;
     visibility: hidden;
     opacity: 0;
     transform: translateY(-100%);
