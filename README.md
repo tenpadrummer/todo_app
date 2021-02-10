@@ -37,7 +37,7 @@ You also get notifications to your slack channel that you take part in.
 | name               | string              | null: false                |
 | content            | string              | null: false                |
 | deadline           | datetime            | null: false                |
-| status             | boolean             | null: false                |
+| finished           | boolean             | null: false                |
 | user_id            | integer             | foreign_key: true          |
 | task_id            | integer             | foreign_key: true          |
 
