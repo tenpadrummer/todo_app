@@ -10,6 +10,31 @@
   </head>
 
   <body>
+    <header class="site-header">
+      <div class="site-header__wrapper">
+        <a href="/" class="brand">TodoApp</a>
+        <nav class="nav">
+          <ul class="nav__wrapper">
+            <% if logged_in? %>
+              <ol class="nav__item"><a href="/">New Task</a></ol>
+              <ol class="nav__item"><a href="/">New Project</a></ol>
+              <ol class="nav__item"><a href="/">Edit Profile</a></ol>
+              <ol class="nav__item"><%= link_to "Log out", session_path(current_user), method: :delete %></ol>
+            <% else %>
+              <ol class="nav__item"><%= link_to "Sign up", new_user_path %></ol>
+              <ol class="nav__item"><%= link_to "Log in", new_session_path %></ol>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <%= render "shared/flash_messages" %>
     <%= yield %>
+    <%= console %>
+    <footer class="site-footer">
+      <p class="copyright">
+        COPYRIGHT ©tenpadrummer All rights Reserved.
+      </p>
+    </footer>
   </body>
 </html>
