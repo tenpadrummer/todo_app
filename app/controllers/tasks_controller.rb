@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_login, except: [:index]
-  before_action :set_task, only: [:show, :edit, :update]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
     if logged_in?
@@ -31,6 +31,16 @@ class TasksController < ApplicationController
       flash[:error] = "Something went wrong"
       render :edit
     end
+  end
+
+  def destroy
+    @task.destroy!
+    flash[:message] = "task successfully deleted!!"
+    redirect_to root_url
+    rescue ActiveRecord::RecordNotFound
+      flash[:message] = "Task was already deleted!"
+    rescue ActiveRecord::RecordNotDestroyed
+      flash[:message] = "Task was not deleted!"
   end
 
   private
