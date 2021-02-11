@@ -1,5 +1,7 @@
 <div class="card">
   <%= @task.title %><%= @task.content %><%= @task.deadline %>
   <p><%= link_to "Edit task", edit_task_path(@task) %></p>
-  <p><%= link_to "Delete task", task_path(@task), method: :delete %></p>
+  <% if task_unfinished? %>
+    <p><%= link_to "Delete task", task_path(@task), method: :delete %></p>
+  <% end %>
 </div>
