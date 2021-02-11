@@ -1,7 +1,16 @@
 class TasksController < ApplicationController
+  before_action :require_login, except: [:index]
+
   def index
-    @tasks = Task.where(user_id: session[:user_id])
+    if logged_in?
+      @tasks = Task.where(user_id: current_user.id)
+    end
   end
+
+  def show
+    @task = Task.find(params[:id])
+  end
+
 
   def new
     @task = Task.new
@@ -21,7 +30,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content, :deadline, :finished).merge(user_id: session[:user_id])
+    params.require(:task).permit(:title, :content, :deadline, :finished).merge(user_id: current_user.id)
   end
 
 end

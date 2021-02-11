@@ -1,3 +1,7 @@
 <div class="task">
-  <%= task.title %><%= task.content %><%= task.deadline %>
+  <div class="card">
+    <%= link_to task_path(task) do %>
+      <%= task.title %><%= task.content %><%= task.deadline %>
+    <% end %>
+  </div>
 </div>
