@@ -4,6 +4,7 @@
     <nav class="nav">
       <ul class="nav__wrapper">
         <% if logged_in? %>
+          <ol class="nav__item"><p><%= current_user.name %></p></ol>
           <ol class="nav__item"><%= link_to "New Task", new_task_path %></ol>
           <ol class="nav__item"><%= link_to "New Project", "/" %></ol>
           <ol class="nav__item"><%= link_to "Edit Profile", "/" %></ol>
