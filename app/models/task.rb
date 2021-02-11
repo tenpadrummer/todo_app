@@ -5,7 +5,6 @@ class Task < ApplicationRecord
     e.validates :title
     e.validates :content
     e.validates :deadline
-    e.validates :user_id
   end
   validates_inclusion_of :finished, in: [true, false]
   validate :correct_date?

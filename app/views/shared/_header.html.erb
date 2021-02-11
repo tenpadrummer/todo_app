@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="site-header__wrapper">
-    <a href="/" class="brand">TodoApp</a>
+    <%= link_to "TodoApp", root_url, class: "brand" %>
     <nav class="nav">
       <ul class="nav__wrapper">
         <% if logged_in? %>
