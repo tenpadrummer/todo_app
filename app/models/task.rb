@@ -2,7 +2,7 @@ class Task < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do |e|
-    e.validates :name
+    e.validates :title
     e.validates :content
     e.validates :deadline
     e.validates :user_id

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-
+    @tasks = Task.where(user_id: session[:user_id])
   end
 
   def new
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :content, :deadline, :finished).merge(user_id: session[:user_id])
+    params.require(:task).permit(:title, :content, :deadline, :finished).merge(user_id: session[:user_id])
   end
 
 end
