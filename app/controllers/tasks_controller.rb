@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     if logged_in?
       @tasks = Task.where(user_id: current_user.id)
+      @projects = Project.all
     end
   end
 
@@ -35,7 +36,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy!
-    flash[:message] = "task successfully deleted!!"
+    flash[:message] = "Task successfully deleted!!"
     redirect_to root_url
     rescue ActiveRecord::RecordNotFound
       flash[:message] = "Task was already deleted!"
@@ -46,7 +47,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content, :deadline, :finished).merge(user_id: current_user.id)
+    params.require(:task).permit(:title, :content, :deadline, :finished, :project_id).merge(user_id: current_user.id)
   end
 
   def set_task

@@ -12,6 +12,10 @@
     <%= f.label :datetime, "日程" %>
     <%= f.datetime_select :deadline, {use_month_numbers: true, start_year: Date.today.year, datetime_separator: '<h4>時間</h4>'}, class: 'form-control' %>
   </div>
+  <div class="form-group">
+    <%= f.label :project_id %>
+    <%= f.collection_select :project_id, Project.all, :id, :name, prompt: {} %>
+  </div>
   <% if new_record?%>
     <div class="form-group">
       <%= f.hidden_field :finished, class: 'form-control'%>

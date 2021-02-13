@@ -1,7 +1,9 @@
-<div class="task">
-  <div class="card">
-    <%= link_to task_path(task) do %>
-      <%= task.title %><%= task.content %><%= task.deadline %>
-    <% end %>
+<% if is_categorize(project, task) %>
+  <div class="task">
+    <div class="card">
+      <%= link_to task_path(task) do %>
+        <%= task.title %><%= task.content %><%= task.deadline %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>
