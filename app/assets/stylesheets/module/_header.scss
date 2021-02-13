@@ -1,5 +1,6 @@
 .brand {
   font-weight: bold;
+  font-size: 20px;
   font-size: 1.7rem;
 }
 
@@ -11,6 +12,12 @@
     padding-bottom: 1rem;
     margin: 0 1.5rem;
   }
+  .nav__item a {
+    @include nav-item;
+  }
+  .nav__item p {
+    @include nav-item;
+  }
 }
 
 @media (min-width: 600px) {
@@ -21,9 +28,6 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-}
-
-@media (min-width: 600px) {
   .nav__wrapper {
     display: flex;
   }
@@ -47,14 +51,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.nav__item a {
-  display: block;
-  padding: 1.5rem 1rem;
-}
-
-.nav__item p {
-  display: block;
-  padding: 1.5rem 1rem;
 }

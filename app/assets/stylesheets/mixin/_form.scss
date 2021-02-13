@@ -1,0 +1,25 @@
+@mixin form-control($gray: #ddd) {
+  border: 1px solid $gray;
+  border-radius: 6px;
+  margin-left: 40px;
+  padding: 0 1em;
+  height: 3em;
+  flex: 1;
+  width: 100%;
+  max-width: 70%;
+  background: $gray;
+  font-size: 1.1rem;
+}
+
+@mixin form-btn() {
+  border-radius: 6px;
+  margin: 1em auto 0 auto;
+  padding: 1em 0;
+  width: 25%;
+  display: block;
+  letter-spacing: 0.05em;
+  background: $color_emerald;
+  color: $color_white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

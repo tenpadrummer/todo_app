@@ -3,8 +3,7 @@ form {
   margin: 0 auto;
   padding: 1em;
   .form-group {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -16,65 +15,20 @@ form {
       font-size: 1.1rem;
     }
     .form-control {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      margin-left: 40px;
-      padding-left: 1em;
-      padding-right: 1em;
-      height: 3em;
-      flex: 1;
-      width: 100%;
-      max-width: 70%;
-      background: #eaedf2;
-      font-size: 1.1rem;
+      @include form-control;
     }
     select {
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      margin-left: 40px;
-      padding-left: 1em;
-      padding-right: 1em;
-      height: 3rem;
-      flex: 1;
-      width: 100%;
-      max-width: 70%;
-      background: #eaedf2;
-      font-size: 1.1rem;
+      @include form-control;
     }
   }
-}
-
-.form-btn {
-  border-radius: 6px;
-  margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  width: 25%;
-  display: block;
-  letter-spacing: 0.05em;
-  background: #5bc8ac;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-@media screen and (max-width: 480px) {
   .form-btn {
-    margin-top: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 160px;
-    font-size: 1.1rem;
+    @include form-btn;
   }
 }
 
 @media screen and (max-width: 480px) {
   .form-group {
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em;
     flex-wrap: wrap;
     label {
       max-width: inherit;
@@ -83,18 +37,22 @@ form {
       font-size: 1.1rem;
     }
     .form-control  {
-      margin-left: 0;
-      margin-top: 1em;
+      margin: 1em 0;
       height: 40px;
       flex: inherit;
       font-size: 1.1rem;
     }
     select {
-      margin-left: 0;
-      margin-top: 1em;
+      margin: 1em 0;
       height: 40px;
       flex: inherit;
       font-size: 1.1rem;
     }
+  }
+  .form-btn {
+    margin-top: 1em;
+    padding: 1em 0;
+    width: 160px;
+    font-size: 1.1rem;
   }
 }
