@@ -39,7 +39,7 @@ You also get notifications to your slack channel that you take part in.
 | deadline           | datetime            | null: false                |
 | finished           | boolean             | null: false                |
 | user_id            | integer             | foreign_key: true          |
-| task_id            | integer             | foreign_key: true          |
+| project_id         | integer             | foreign_key: true          |
 
 
 #### Association
