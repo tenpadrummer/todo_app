@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController
-  before_action :require_login, except: [:new, :create]
+  before_action :require_login, except: %i[new create]
 
   def create
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:success] = "Successfully logged in!"
+      flash[:success] = 'Successfully logged in!'
       redirect_to root_url
     else
-      flash[:danger] = "Invalid email or password!"
+      flash[:danger] = 'Invalid email or password!'
       render :new
     end
   end
 
   def destroy
     session.delete(:user_id)
-    flash[:success] = "Successfully logged out!"
+    flash[:success] = 'Successfully logged out!'
     redirect_to root_url
   end
 end

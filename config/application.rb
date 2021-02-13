@@ -10,9 +10,9 @@ module TodoApp
     config.active_record.default_timezone = :local
     config.generators do |g|
       g.test_framework :rspec,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false
       g.stylesheets false
       g.javascripts false
       g.test_framework false

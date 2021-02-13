@@ -11,8 +11,6 @@ class Task < ApplicationRecord
   validate :correct_date?
 
   def correct_date?
-    if self.deadline.to_time < Time.now
-      errors.add(:deadline, "Invalid.")
-    end
+    errors.add(:deadline, 'Invalid.') if deadline.to_time < Time.now
   end
 end

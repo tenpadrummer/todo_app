@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, except: [:new, :create]
+  before_action :require_login, except: %i[new create]
 
   def new
     @user = User.new
@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "user successfully created!!"
+      flash[:success] = 'user successfully created!!'
       redirect_to root_url
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render :new
     end
   end

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_login, except: [:index]
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   def index
     if logged_in?
@@ -16,33 +16,33 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save(finished: false)
-      flash[:success] = "task successfully created!!"
+      flash[:success] = 'task successfully created!!'
       SlackNotifier.new.send(@task)
       redirect_to root_url
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render :new
     end
   end
 
   def update
     if @task.update(task_params)
-      flash[:success] = "task successfully updated!!"
+      flash[:success] = 'task successfully updated!!'
       redirect_to task_path
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render :edit
     end
   end
 
   def destroy
     @task.destroy!
-    flash[:message] = "Task successfully deleted!!"
+    flash[:message] = 'Task successfully deleted!!'
     redirect_to root_url
-    rescue ActiveRecord::RecordNotFound
-      flash[:message] = "Task was already deleted!"
-    rescue ActiveRecord::RecordNotDestroyed
-      flash[:message] = "Task was not deleted!"
+  rescue ActiveRecord::RecordNotFound
+    flash[:message] = 'Task was already deleted!'
+  rescue ActiveRecord::RecordNotDestroyed
+    flash[:message] = 'Task was not deleted!'
   end
 
   private
