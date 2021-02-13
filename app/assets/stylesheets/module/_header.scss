@@ -1,6 +1,6 @@
 .brand {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.7rem;
 }
 
 .site-header {
@@ -50,6 +50,11 @@
 }
 
 .nav__item a {
+  display: block;
+  padding: 1.5rem 1rem;
+}
+
+.nav__item p {
   display: block;
   padding: 1.5rem 1rem;
 }

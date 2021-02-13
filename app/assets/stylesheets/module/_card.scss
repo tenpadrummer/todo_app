@@ -1,0 +1,25 @@
+.card {
+  width: 40%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  margin: 1.2rem;
+}
+.card-content {
+  padding: 1.3rem;
+  text-align: center;
+}
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 2em;
+  text-align: center;
+  color: #333;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 1.1em;
+  a {
+    margin: 0.7rem;
+  }
+}

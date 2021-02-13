@@ -22,8 +22,9 @@
     </div>
   <% else %>
     <div class="form-group">
+      <%= f.label "Project Status" %>
       <%= f.select :finished, [['未完',0],['完了',1]], { include_blank: true, selected: 0 } %>
     </div>
   <% end %>
-  <%= f.submit btn_msg %>
+  <%= f.submit btn_msg, class: "form-btn" %>
 <% end %>
