@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  include TasksHelper
 
   def require_login
     unless logged_in?

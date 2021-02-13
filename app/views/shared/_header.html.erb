@@ -5,7 +5,7 @@
       <ul class="nav__wrapper">
         <% if logged_in? %>
           <ol class="nav__item"><p><%= current_user.name %></p></ol>
-          <ol class="nav__item"><%= link_to "New Task", new_task_path %></ol>
+          <ol class="nav__item"><%= link_to "New Task", new_task_path if is_projects %></ol>
           <ol class="nav__item"><%= link_to "New Project", new_project_path %></ol>
           <ol class="nav__item"><%= link_to "Edit Profile", "/" %></ol>
           <ol class="nav__item"><%= link_to "Log out", session_path(current_user), method: :delete %></ol>
@@ -17,3 +17,4 @@
     </nav>
   </div>
 </header>
+<%= console%>
