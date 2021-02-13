@@ -17,6 +17,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     if @task.save(finished: false)
       flash[:success] = "task successfully created!!"
+      SlackNotifier.new.send(@task)
       redirect_to root_url
     else
       flash[:error] = "Something went wrong"

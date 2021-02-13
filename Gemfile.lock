@@ -186,6 +186,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    slack-notifier (2.3.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.2)
   rubocop
   sass-rails (>= 6)
+  slack-notifier
   spring
   spring-watcher-listen (~> 2.0.0)
   web-console (>= 3.3.0)
