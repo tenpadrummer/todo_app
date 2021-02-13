@@ -1,4 +1,4 @@
-<% if categorize?(project, task) %>
+<% if is_categorize(project, task) %>
   <div class="task">
     <div class="card">
       <%= link_to task_path(task) do %>

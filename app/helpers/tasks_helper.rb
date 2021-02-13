@@ -7,7 +7,7 @@ module TasksHelper
     @task.new_record?
   end
 
-  def categorize?(project, task)
+  def is_categorize(project, task)
     project.id == task.project_id
   end
 end
