@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :user
+  belongs_to :project
 
   with_options presence: true do |e|
     e.validates :title

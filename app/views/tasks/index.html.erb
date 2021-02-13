@@ -1,3 +1,15 @@
-<div class="tasks">
-  <%= render partial: "task", collection: @tasks %>
+<div class="task__wrapper">
+  <div class="projects">
+    <% @projects.each do |project| %>
+      <div class="project">
+        <%= project.name %>
+        <%= link_to "Edit Project", edit_project_path(project) %>
+        <%= link_to "Delete Project", project_path(project), method: :delete %>
+        <div class="tasks">
+          <%= render partial: "task", collection: @tasks, locals: { project: project } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+<%= console %>
