@@ -5,8 +5,7 @@ class TasksController < ApplicationController
   def index
     if logged_in?
       @tasks = Task.where(user_id: current_user.id)
-      #ページネーションを導入するまでの応急処置（ページネーションはuser#editの時に同時実装予定）
-      @projects = Project.all.limit(3)
+      @projects = Project.page(params[:page]).per(3)
     end
   end
 
@@ -38,12 +37,12 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy!
-    flash[:message] = 'Task successfully deleted!!'
+    flash[:success] = 'Task successfully deleted!!'
     redirect_to root_url
   rescue ActiveRecord::RecordNotFound
-    flash[:message] = 'Task was already deleted!'
+    flash[:error] = 'Task was already deleted!'
   rescue ActiveRecord::RecordNotDestroyed
-    flash[:message] = 'Task was not deleted!'
+    flash[:error] = 'Task was not deleted!'
   end
 
   private
