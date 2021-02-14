@@ -2,6 +2,6 @@
   <%= @task.title %><%= @task.content %><%= @task.deadline %>
   <p><%= link_to "Edit task", edit_task_path(@task) %></p>
   <% if task_unfinished? %>
-    <p><%= link_to "Delete task", task_path(@task), method: :delete %></p>
+    <p><%= link_to "Delete task", task_path(@task), method: :delete, data: { confirm: "Delete thie Task?" } %></p>
   <% end %>
 </div>
