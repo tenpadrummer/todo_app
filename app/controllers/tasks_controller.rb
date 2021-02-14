@@ -3,9 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
 
   def index
-    if logged_in?
-      @tasks = Task.where(user_id: current_user.id)
-    end
+    @tasks = Task.where(user_id: current_user.id) if logged_in?
     @projects = Project.page(params[:page]).per(3)
   end
 
