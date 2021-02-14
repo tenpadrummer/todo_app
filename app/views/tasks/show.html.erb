@@ -1,7 +1,7 @@
 <div class="task-card">
   <p class="task-card--title"><%= @task.title %><p>
   <p class="task-card--content"><%= @task.content %><p>
-  <div class="task-card--btn">
+  <div class="task-card__btn">
     <p class="task-card--deadline">finish date: <%= @task.deadline.strftime("%Y/%m/%d %H:%M") %><p>
     <p class="btn"><%= link_to "Edit task", edit_task_path(@task) %><p>
     <% if task_unfinished? %>
