@@ -1,0 +1,58 @@
+form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 1em;
+  .form-group {
+    padding: 1em 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    label {
+      width: 100%;
+      max-width: 25%;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .form-control {
+      @include form-control;
+    }
+    select {
+      @include form-control;
+    }
+  }
+  .form-btn {
+    @include form-btn;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-group {
+    padding: 1em;
+    flex-wrap: wrap;
+    label {
+      max-width: inherit;
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+    .form-control  {
+      margin: 1em 0;
+      height: 40px;
+      flex: inherit;
+      font-size: 1.1rem;
+    }
+    select {
+      margin: 1em 0;
+      height: 40px;
+      flex: inherit;
+      font-size: 1.1rem;
+    }
+  }
+  .form-btn {
+    margin-top: 1em;
+    padding: 1em 0;
+    width: 160px;
+    font-size: 1.1rem;
+  }
+}

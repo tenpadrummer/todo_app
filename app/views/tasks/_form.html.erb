@@ -9,8 +9,8 @@
     <%= f.text_field :content, class: 'form-control', placeholder: "Enter task detail" %>
   </div>
   <div class="form-group">
-    <%= f.label :datetime, "日程" %>
-    <%= f.datetime_select :deadline, {use_month_numbers: true, start_year: Date.today.year, datetime_separator: '<h4>時間</h4>'}, class: 'form-control' %>
+    <%= f.label :datetime, "Date" %>
+    <%= f.datetime_select :deadline, {use_month_numbers: true, start_year: Date.today.year, datetime_separator: '<h4>Time</h4>'}, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :project_id %>
@@ -22,8 +22,9 @@
     </div>
   <% else %>
     <div class="form-group">
-      <%= f.select :finished, [['未完',0],['完了',1]], { include_blank: true, selected: 0 } %>
+      <%= f.label "Project Status" %>
+      <%= f.select :finished, [['Unfinished',0],['Finished',1]], { include_blank: true, selected: 0 } %>
     </div>
   <% end %>
-  <%= f.submit btn_msg %>
+  <%= f.submit btn_msg, class: "form-btn" %>
 <% end %>

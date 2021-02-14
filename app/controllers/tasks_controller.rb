@@ -5,7 +5,8 @@ class TasksController < ApplicationController
   def index
     if logged_in?
       @tasks = Task.where(user_id: current_user.id)
-      @projects = Project.all
+      #ページネーションを導入するまでの応急処置（ページネーションはuser#editの時に同時実装予定）
+      @projects = Project.all.limit(3)
     end
   end
 
