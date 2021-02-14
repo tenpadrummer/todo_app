@@ -1,0 +1,20 @@
+.task__panel {
+  border-radius: 6px;
+  margin: 2em 0;
+  color: $color_black;;
+  background: lighten($color_emerald, 33%);
+  border-left: solid 10px $color_emerald;
+  margin: 1.1rem;
+  p {
+    text-align: center;
+    padding-top: 0.8em;
+    color: $color_black;
+    font-size: 1.1rem;
+  }
+  .detail{
+    color: $color_lightgray;
+    text-align: right;
+    padding:0 0.7em 0.5em 0;
+  }
+}
+
