@@ -29,12 +29,12 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy!
-    flash[:message] = 'Project successfully deleted!!'
+    flash[:success] = 'Project successfully deleted!!'
     redirect_to root_url
   rescue ActiveRecord::RecordNotFound
-    flash[:message] = 'Project was already deleted!'
+    flash[:error] = 'Project was already deleted!'
   rescue ActiveRecord::RecordNotDestroyed
-    flash[:message] = 'Project was not deleted!'
+    flash[:error] = 'Project was not deleted!'
   end
 
   private

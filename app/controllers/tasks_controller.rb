@@ -37,12 +37,12 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy!
-    flash[:message] = 'Task successfully deleted!!'
+    flash[:success] = 'Task successfully deleted!!'
     redirect_to root_url
   rescue ActiveRecord::RecordNotFound
-    flash[:message] = 'Task was already deleted!'
+    flash[:error] = 'Task was already deleted!'
   rescue ActiveRecord::RecordNotDestroyed
-    flash[:message] = 'Task was not deleted!'
+    flash[:error] = 'Task was not deleted!'
   end
 
   private
