@@ -1,8 +1,6 @@
 .card {
   width: 40%;
-  background: $color_white;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px $color_lightgray;
+  @include card-shadow;
   margin: 1.2rem;
 }
 .card-content {
@@ -15,7 +13,8 @@
   padding-bottom: 2%;
 }
 .card-link {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   border-top: 1px solid $color_lightgray;
   padding: 1.1em;
   a {
