@@ -7,7 +7,6 @@
           <ol class="nav__item"><p><%= current_user.name %></p></ol>
           <ol class="nav__item"><%= link_to "New Task", new_task_path if is_projects %></ol>
           <ol class="nav__item"><%= link_to "New Project", new_project_path %></ol>
-          <ol class="nav__item"><%= link_to "Edit Profile", "/" %></ol>
           <ol class="nav__item"><%= link_to "Log out", session_path(current_user), method: :delete, data: { confirm: "Log out?" } %></ol>
         <% else %>
           <ol class="nav__item"><%= link_to "Sign up", new_user_path %></ol>
