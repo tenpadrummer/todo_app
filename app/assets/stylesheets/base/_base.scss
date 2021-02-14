@@ -1,4 +1,4 @@
-// styling　common pages
+// styling common pages
 
 body{
   font-family: 'Noto Sans Japanese', sans-serif;
@@ -15,5 +15,15 @@ a {
   @include link-decorate;
   &:hover {
     @include link-decorate;
+  }
+}
+
+.btn {
+  @include btn-design(5px);
+  margin: 0 0.5em;
+  padding: 0.2em 0.5em;
+  &:hover {
+    margin-top: 3px;
+    @include btn-design(2px);
   }
 }

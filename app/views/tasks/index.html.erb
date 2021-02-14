@@ -4,10 +4,10 @@
       <% @projects.each do |project| %>
         <section class="card">
           <div class="card-content">
-            <%= project.name %>
+            <p class="title"><%= project.name %><p>
             <div class="card-link">
-              <%= link_to "Edit Project", edit_project_path(project) %>
-              <%= link_to "Delete Project", project_path(project), method: :delete, data: { confirm: "Are you Sure?" } %>
+              <p class="btn"><%= link_to "Edit Project", edit_project_path(project) %></p>
+              <p class="btn"><%= link_to "Delete Project", project_path(project), method: :delete, data: { confirm: "Are you Sure?" } %></p>
             </div>
             <hr />
             <div class="tasks">

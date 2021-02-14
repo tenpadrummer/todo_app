@@ -1,0 +1,47 @@
+.task__panel {
+  border-radius: 6px;
+  margin: 2em 0;
+  color: $color_black;;
+  background: lighten($color_emerald, 33%);
+  border-left: solid 10px $color_emerald;
+  margin: 1.1rem;
+  p {
+    text-align: center;
+    padding-top: 0.8em;
+    color: $color_black;
+    font-size: 1.1rem;
+  }
+  .detail{
+    color: $color_lightgray;
+    text-align: right;
+    padding:0 0.7em 0.5em 0;
+  }
+}
+
+.task-card {
+  width: 700px;
+  margin:0 auto;
+  text-align: center;
+  @include card-shadow;
+  &--title {
+    margin: 0.6em;
+    color: $color_black;
+    font-size: 1.8em;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid $color_lightgray;
+  }
+  &--content {
+    padding: 0.6em 0 1.4em 0;
+    color: $color_lightgray;
+  }
+  &--deadline {
+    padding: 0.2em 0.5em 0 0;
+    color: $color_lightgray;
+  }
+  &--btn {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 3% 1.1% 0;
+  }
+}
+

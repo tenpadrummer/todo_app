@@ -6,3 +6,9 @@
   text-decoration: none;
   color: $color;
 }
+
+@mixin btn-design($px) {
+  color: $color_black;
+  background-color: $color_skyblue;
+  border-bottom: $px solid darken($color_skyblue, 14%);
+}

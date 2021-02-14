@@ -3,6 +3,7 @@
 @import "mixin/link";
 @import "mixin/list";
 @import "mixin/form";
+@import "mixin/card";
 
 @import "base/reset";
 @import "base/base";
@@ -14,4 +15,5 @@
 @import "module/form";
 
 @import "page/project";
+@import "page/task";
 
