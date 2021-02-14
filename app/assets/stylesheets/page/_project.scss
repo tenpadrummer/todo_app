@@ -2,3 +2,13 @@
   display: flex;
   margin: 0 4%;
 }
+
+.pagination{
+  border: none;
+  color: $color_lightgray;
+  text-align: center;
+  padding: 1rem 0;
+  span {
+    margin: 0 0.6em;
+  }
+}
